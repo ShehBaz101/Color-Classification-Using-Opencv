@@ -6,7 +6,7 @@ import pandas as pdo
 img = cv2.imread('Sample.png')
 
 # resize img
-img = cv2.resize(img, (550, 350))
+img = cv2.resize(img, (500, 400))
 
 # declaring global variables (are used later on)
 clicked = False
@@ -28,7 +28,7 @@ def getColorName(R, G, B):
     return cname
 
 
-# function to get x,y coordinates of mouse double click
+# >>> function to get x,y coordinates of mouse double click
 def draw_function(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONUP:
         global b, g, r, xpos, ypos, clicked
@@ -65,4 +65,5 @@ while 1:
     if cv2.waitKey(20) & 0xFF == 27:
         break
 
+# Destroy all the windows cv2
 cv2.destroyAllWindows()
